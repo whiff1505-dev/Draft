@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Profile</title>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --bg: #f4f7f6;
+            --text: #333;
+            --card: #ffffff;
+        }
+
+        /* NEW ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            /* Apply main entry animation */
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            /* Makes each section fade in slightly after the other */
+            animation: slideInLeft 0.6s ease-out both;
+        }
+
+        /* Staggered delays so sections pop in one by one */
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.6s; }
+        .section:nth-child(6) { animation-delay: 0.8s; }
+        .section:nth-child(8) { animation-delay: 1.0s; }
+        .section:nth-child(9) { animation-delay: 1.2s; }
+        .section:nth-child(10) { animation-delay: 1.4s; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .item {
+            padding: 10px;
+            border-left: 4px solid #eee;
+            transition: all 0.3s ease; /* Hover effect animation */
+        }
+
+        /* Subtle hover effect for the info boxes */
+        .item:hover {
+            border-left-color: var(--primary);
+            background: #f0f7ff;
+            transform: scale(1.02);
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .value {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .motto {
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px dashed #ccc;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About Me</h1>
+
+    <div class="section grid">
+        <div class="item">
+            <div class="label">Name</div>
+            <div class="value">Arn Tagudin</div>
+        </div>
+        <div class="item">
+            <div class="label">Age</div>
+            <div class="value">18 Years Old</div>
+        </div>
+        <div class="item">
+            <div class="label">Birthday</div>
+            <div class="value">April 15, 2007</div>
+        </div>
+        <div class="item">
+            <div class="label">Birth Place</div>
+            <div class="value">Pio duran, Albay</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="item">
+            <div class="label">Address</div>
+            <div class="value">Gawad Kalinga Malanim Gitna Brgy Dela paz, Antipolo City</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <div class="label" style="text-align: center;">Motto in Life</div>
+        <p class="motto">"Life is gold."</p>
+    </div>
+
+    <div class="section grid">
+        <div class="item">
+            <div class="label">Hobby</div>
+            <div class="value">Games</div>
+        </div>
+        <div class="item">
+            <div class="label">Talent</div>
+            <div class="value">None</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <div class="item">
+            <div class="label">Dream Course</div>
+            <div class="value">BS Computer Science</div>
+        </div>
+        <div class="item">
+            <div class="label">Why this course?</div>
+            <div class="value">High Salary</div>
+        </div>
+    </div>
+
+    <div class="section grid">
+        <div class="item">
+            <div class="label">Parents</div>
+            <div class="value">Marites & Manuel Tagudin</div>
+        </div>
+        <div class="item">
+            <div class="label">Parents' Work</div>
+            <div class="value">Handicraft & Shoe Maker</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="item" style="border-left-color: #ffb6c1;">
+            <div class="label">Crush</div>
+            <div class="value">Don't Have One</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
